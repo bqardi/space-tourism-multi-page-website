@@ -7,7 +7,7 @@
   &__body {
     padding: 1.5rem;
     text-align: center;
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: media.$large) {
       padding: 1.5rem min(8vw, 10rem);
       display: flex;
       justify-content: space-between;
@@ -19,7 +19,7 @@
   &__content {
     max-width: 450px;
     margin: 0 auto;
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: media.$large) {
       margin: 0;
     }
   }
@@ -36,7 +36,7 @@
       font-size: 5rem;
       letter-spacing: 0;
     }
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 32rem) {
       font-size: 1.25rem;
       &__large {
         font-size: 8.375rem;

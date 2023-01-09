@@ -1,3 +1,4 @@
+@use "../../styles/media";
 @use "../../styles/colors";
 
 .Navigation {
@@ -15,7 +16,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: media.$medium) {
       display: none;
     }
   }
@@ -31,7 +32,7 @@
     visibility: hidden;
     transition: transform 0.15s, visibility 0.15s;
     counter-reset: linknumber -1;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: media.$medium) {
       transform: translateX(0);
       visibility: visible;
       position: static;
@@ -41,7 +42,7 @@
       transition: all 0s;
       height: 100%;
     }
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: media.$large) {
       gap: 3rem;
       padding: 0 10vw;
     }
@@ -76,7 +77,7 @@
     &:focus-visible {
       background-color: transparentize(colors.$white, 0.9);
     }
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: media.$medium) {
       display: flex;
       align-items: center;
       height: 100%;
@@ -95,7 +96,7 @@
         margin-right: 0;
       }
     }
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: media.$large) {
       &::before {
         content: "0" counter(linknumber);
         margin-right: 1rem;

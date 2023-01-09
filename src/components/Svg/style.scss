@@ -1,7 +1,9 @@
+@use "../../styles/media";
+
 .svg-logo {
   width: 2.5rem;
   height: 2.5rem;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: media.$medium) {
     width: 3rem;
     height: 3rem;
   }
