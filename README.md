@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution_url_here](solution_url_here)
-- Live Site URL: [live_site_url_here](live_site_url_here)
+- Solution URL: [https://github.com/bqardi/space-tourism-multi-page-website](https://github.com/bqardi/space-tourism-multi-page-website)
+- Live Site URL: [https://bqardi-space-tourism.netlify.app](https://bqardi-space-tourism.netlify.app)
 
 ## My process
 
