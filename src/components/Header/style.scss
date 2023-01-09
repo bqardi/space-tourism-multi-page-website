@@ -13,7 +13,7 @@
   @media screen and (min-width: media.$medium) {
     padding: 2rem 0 2rem 2rem;
   }
-  @media screen and (min-width: (media.$medium + 2rem)) {
+  @media screen and (min-width: (media.$large + 2rem)) {
     &::before {
       content: "";
       position: relative;
