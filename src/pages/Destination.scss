@@ -30,7 +30,7 @@
     padding: 0.75rem;
     outline: none;
     &--active {
-      text-decoration: underline solid colors.$white 3px;
+      text-decoration: underline 3px solid colors.$white;
     }
     &:hover,
     &:focus-visible {
