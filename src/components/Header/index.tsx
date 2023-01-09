@@ -5,7 +5,7 @@ import "./style.scss";
 function Header() {
   return (
     <header className="Header">
-      <a className="Header__logo" href="./" aria-label="Space Tourism, Home">
+      <a className="Header__logo" href="/" aria-label="Space Tourism, Home">
         <Logo />
       </a>
       <Navigation />

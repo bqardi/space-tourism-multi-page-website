@@ -9,6 +9,20 @@
   }
   &__logo {
     margin: 1.5rem;
+    border-radius: 99999px;
+    &:hover {
+      outline: 1.25em solid rgb(150, 150, 150, 0.1);
+      @media screen and (min-width: media.$medium) {
+        outline: 2.75em solid rgb(150, 150, 150, 0.1);
+      }
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 1.25rem rgba(0, 153, 255, 0.25);
+      @media screen and (min-width: media.$medium) {
+        box-shadow: 0 0 0 2.75rem rgba(0, 153, 255, 0.25);
+      }
+    }
   }
   @media screen and (min-width: media.$medium) {
     padding: 2rem 0 2rem 2rem;
