@@ -47,7 +47,6 @@ function Navigation() {
         ref={burgerButtonRef}
         className="Navigation__button"
         onClick={() => {
-          console.log("Here");
           setOpen((prev) => !prev);
         }}
         aria-expanded={open}
