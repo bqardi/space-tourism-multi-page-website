@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Avoid accidental upload of the Sketch and Figma design files
+########################################################
+## Please do not remove lines 29 and 30 - thanks! 🙂 ##
+########################################################
+*.sketch
+*.fig

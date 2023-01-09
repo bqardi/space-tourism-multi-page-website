@@ -1,0 +1,83 @@
+@use "../styles/colors";
+@use "../styles/typography";
+@use "../styles/media";
+
+.Home {
+  position: relative;
+  &__body {
+    padding: 1.5rem;
+    text-align: center;
+    @media screen and (min-width: 900px) {
+      padding: 1.5rem min(8vw, 10rem);
+      display: flex;
+      justify-content: space-between;
+      margin: 5rem auto 0;
+      text-align: left;
+      max-width: 1200px;
+    }
+  }
+  &__content {
+    max-width: 450px;
+    margin: 0 auto;
+    @media screen and (min-width: 900px) {
+      margin: 0;
+    }
+  }
+  &__text {
+    letter-spacing: 1px;
+  }
+  &Title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+    &__large {
+      display: block;
+      font-family: typography.$bellefair;
+      font-size: 5rem;
+      letter-spacing: 0;
+    }
+    @media screen and (min-width: 500px) {
+      font-size: 1.25rem;
+      &__large {
+        font-size: 8.375rem;
+      }
+    }
+  }
+  &Explore {
+    display: grid;
+    place-items: center;
+    $buttonDimensions: 150px;
+    width: $buttonDimensions;
+    height: $buttonDimensions;
+    text-decoration: none;
+    padding: 0;
+    margin: 4rem auto 0;
+    color: colors.$themeDark;
+    background-color: colors.$white;
+    border: none;
+    border-radius: 99999px;
+    font-family: typography.$bellefair;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    outline: 0 solid transparent;
+    transition: outline 0.3s;
+    cursor: pointer;
+    &:hover {
+      outline: 2.75em solid rgb(150, 150, 150, 0.1);
+    }
+    &:focus-visible {
+      box-shadow: 0 0 0 4rem rgba(0, 153, 255, 0.25);
+    }
+    @media screen and (min-width: media.$tablet) {
+      $buttonDimensions: 242px;
+      width: $buttonDimensions;
+      height: $buttonDimensions;
+      font-size: 2rem;
+    }
+    @media screen and (min-width: media.$desktop) {
+      $buttonDimensions: 274px;
+      width: $buttonDimensions;
+      height: $buttonDimensions;
+    }
+  }
+}

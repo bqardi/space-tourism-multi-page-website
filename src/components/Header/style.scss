@@ -1,0 +1,27 @@
+.Header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  &__link {
+    text-decoration: none;
+  }
+  &__logo {
+    margin: 1.5rem;
+  }
+  @media screen and (min-width: 600px) {
+    padding: 2rem 0 2rem 2rem;
+  }
+  @media screen and (min-width: 932px) {
+    &::before {
+      content: "";
+      position: relative;
+      z-index: 1;
+      order: 1;
+      flex: 1 0 auto;
+      align-self: center;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateX(2rem);
+    }
+  }
+}

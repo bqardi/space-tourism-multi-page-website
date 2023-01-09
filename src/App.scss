@@ -1,0 +1,15 @@
+@use "./styles/colors";
+@use "./styles/typography";
+
+body {
+  font-family: typography.$barlow;
+  font-size: 0.9375rem;
+  line-height: 1.667;
+  font-weight: 100;
+  color: colors.$themeLight;
+  background-color: colors.$themeDark;
+}
+
+.App {
+  min-height: 100vh;
+}

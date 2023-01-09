@@ -1,0 +1,105 @@
+@use "../../styles/colors";
+
+.Navigation {
+  order: 2;
+  &__button {
+    position: relative;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+  }
+  &__list {
+    list-style-type: none;
+    position: fixed;
+    inset: 0;
+    left: 31%;
+    padding: 7rem 0 0;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(82px);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.15s, visibility 0.15s;
+    counter-reset: linknumber -1;
+    @media screen and (min-width: 600px) {
+      transform: translateX(0);
+      visibility: visible;
+      position: static;
+      padding: 0 2rem;
+      display: flex;
+      gap: 2rem;
+      transition: all 0s;
+      height: 100%;
+    }
+    @media screen and (min-width: 900px) {
+      gap: 3rem;
+      padding: 0 10vw;
+    }
+  }
+  &--open &__list {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  &__link {
+    text-decoration: none;
+    color: colors.$themeLight;
+    text-transform: uppercase;
+    display: block;
+    line-height: 3;
+    outline: none;
+    padding-left: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.1475rem;
+    &::before {
+      content: "0" counter(linknumber);
+      counter-increment: linknumber;
+      margin-right: 1rem;
+      font-weight: 700;
+    }
+    &--active {
+      color: colors.$white;
+      border-right: 4px solid colors.$white;
+    }
+    &:hover {
+      border-right: 4px solid transparentize(colors.$white, 0.5);
+    }
+    &:focus-visible {
+      background-color: transparentize(colors.$white, 0.9);
+    }
+    @media screen and (min-width: 600px) {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-left: 0;
+      border-bottom: 4px solid transparent;
+      &--active {
+        border-right: none;
+        border-bottom: 4px solid colors.$white;
+      }
+      &:hover {
+        border-right: none;
+        border-bottom: 4px solid transparentize(colors.$white, 0.5);
+      }
+      &::before {
+        content: "";
+        margin-right: 0;
+      }
+    }
+    @media screen and (min-width: 900px) {
+      &::before {
+        content: "0" counter(linknumber);
+        margin-right: 1rem;
+      }
+    }
+  }
+}
