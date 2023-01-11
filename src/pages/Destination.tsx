@@ -48,11 +48,15 @@ function Destination() {
         Pick your destination
       </h1>
       {current && (
-        <img
-          className="Destination__image"
-          src={current.images.png}
-          alt={current.name}
-        />
+        <Picture>
+          <Picture.Compatibility
+            src={current.images.png}
+            sources={[
+              { id: 0, srcSet: current.images.webp, type: "image/webp" },
+            ]}
+            alt={current.name}
+          />
+        </Picture>
       )}
       <nav className="Destination__nav" aria-label="Destination menu">
         {data?.destination.map((card: DestinationData) => (
