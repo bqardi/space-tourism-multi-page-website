@@ -1,0 +1,19 @@
+@use "./media";
+
+@mixin hoverFocus {
+  &:hover {
+    outline: 1.25em solid rgb(150, 150, 150, 0.1);
+    background-color: rgb(150, 150, 150, 0.1);
+    @media screen and (min-width: media.$medium) {
+      outline: 2.75em solid rgb(150, 150, 150, 0.1);
+    }
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1.25rem rgba(0, 153, 255, 0.25);
+    background-color: rgba(0, 153, 255, 0.25);
+    @media screen and (min-width: media.$medium) {
+      box-shadow: 0 0 0 2.75rem rgba(0, 153, 255, 0.25);
+    }
+  }
+}
