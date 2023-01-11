@@ -1,0 +1,8 @@
+@use "../../styles/colors";
+
+.Divider {
+  border: none;
+  height: 1px;
+  background-color: colors.$themeMediumDark;
+  margin-block: 2rem;
+}
