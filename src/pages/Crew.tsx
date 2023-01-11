@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Header from "../components/Header";
 import DataContext from "../contexts/data";
 import Picture from "../components/Picture";
 
@@ -24,22 +23,19 @@ export type CrewData = {
 function Crew() {
   const data = useContext(DataContext);
   return (
-    <>
-      <Header />
-      <div className="Crew">
-        {data?.crew.map((card: CrewData) => (
-          <CrewCard key={card.name} data={card} />
-        ))}
-        <Picture>
-          <Picture.Responsive
-            mobile={backgroundCrewMobile}
-            tablet={backgroundCrewTablet}
-            desktop={backgroundCrewDesktop}
-            alt=""
-          />
-        </Picture>
-      </div>
-    </>
+    <div className="Crew">
+      {data?.crew.map((card: CrewData) => (
+        <CrewCard key={card.name} data={card} />
+      ))}
+      <Picture>
+        <Picture.Responsive
+          mobile={backgroundCrewMobile}
+          tablet={backgroundCrewTablet}
+          desktop={backgroundCrewDesktop}
+          alt=""
+        />
+      </Picture>
+    </div>
   );
 }
 

@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import Header from "../components/Header";
 import Picture from "../components/Picture";
 import DataContext from "../contexts/data";
 
@@ -33,49 +32,43 @@ function Destination() {
   );
 
   return (
-    <>
-      <Header />
-      <div className="Destination">
-        <h1 className="Destination__subheading">
-          <span className="Destination__index" aria-hidden="true">
-            01
-          </span>
-          Pick your destination
-        </h1>
-        {current && (
-          <img
-            className="Destination__image"
-            src={current.images.png}
-            alt={current.name}
-          />
-        )}
-        <nav className="Destination__nav" aria-label="Destination menu">
-          {data?.destinations.map((card: DestinationsData) => (
-            <DestinationLink key={card.slug} data={card} />
-          ))}
-        </nav>
-        {current && (
-          <>
-            <h2 className="Destination__heading">{current.name}</h2>
-            <p className="Destination__description">{current.description}</p>
-            <Divider />
-            <DestinationInfo heading="Avg. distance" value={current.distance} />
-            <DestinationInfo
-              heading="Est. travel time"
-              value={current.travel}
-            />
-          </>
-        )}
-        <Picture>
-          <Picture.Responsive
-            mobile={backgroundDestinationMobile}
-            tablet={backgroundDestinationTablet}
-            desktop={backgroundDestinationDesktop}
-            alt=""
-          />
-        </Picture>
-      </div>
-    </>
+    <div className="Destination">
+      <h1 className="Destination__subheading">
+        <span className="Destination__index" aria-hidden="true">
+          01
+        </span>
+        Pick your destination
+      </h1>
+      {current && (
+        <img
+          className="Destination__image"
+          src={current.images.png}
+          alt={current.name}
+        />
+      )}
+      <nav className="Destination__nav" aria-label="Destination menu">
+        {data?.destinations.map((card: DestinationsData) => (
+          <DestinationLink key={card.slug} data={card} />
+        ))}
+      </nav>
+      {current && (
+        <>
+          <h2 className="Destination__heading">{current.name}</h2>
+          <p className="Destination__description">{current.description}</p>
+          <Divider />
+          <DestinationInfo heading="Avg. distance" value={current.distance} />
+          <DestinationInfo heading="Est. travel time" value={current.travel} />
+        </>
+      )}
+      <Picture>
+        <Picture.Responsive
+          mobile={backgroundDestinationMobile}
+          tablet={backgroundDestinationTablet}
+          desktop={backgroundDestinationDesktop}
+          alt=""
+        />
+      </Picture>
+    </div>
   );
 }
 

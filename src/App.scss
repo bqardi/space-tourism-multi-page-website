@@ -1,3 +1,4 @@
+@use "./styles/media";
 @use "./styles/colors";
 @use "./styles/typography";
 
@@ -11,5 +12,10 @@ body {
 }
 
 .App {
+  position: relative;
   min-height: 100vh;
+  padding-top: 5.5rem;
+  @media screen and (min-width: media.$medium) {
+    padding-top: 10rem;
+  }
 }

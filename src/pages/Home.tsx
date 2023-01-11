@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import Picture from "../components/Picture";
 import { Link } from "react-router-dom";
 
@@ -11,7 +10,6 @@ import "./Home.scss";
 function Home() {
   return (
     <div className="Home">
-      <Header />
       <div className="Home__body">
         <div className="Home__content">
           <HomeTitle />

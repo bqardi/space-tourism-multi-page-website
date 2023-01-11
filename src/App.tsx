@@ -6,6 +6,7 @@ import Technology from "./pages/Technology";
 import Destination from "./pages/Destination";
 import DataContext from "./contexts/data";
 import useData from "./hooks/useData";
+import Header from "./components/Header";
 
 function App() {
   const data = useData();
@@ -13,6 +14,7 @@ function App() {
   return (
     <DataContext.Provider value={data}>
       <div className="App">
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/crew" element={<Crew />} />
