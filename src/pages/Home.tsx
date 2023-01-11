@@ -54,8 +54,27 @@ function HomeExplore() {
 }
 
 function getRandomEndpoint() {
-  const endpoints = ["/destination", "/crew", "/technology"];
-  return endpoints[Math.floor(Math.random() * 3)];
+  const endpoints = [
+    [
+      "/destination/moon",
+      "/destination/mars",
+      "/destination/europa",
+      "/destination/titan",
+    ],
+    [
+      "/crew/douglas-hurley",
+      "/crew/mark-shuttleworth",
+      "/crew/victor-glover",
+      "/crew/anousheh-ansari",
+    ],
+    [
+      "/technology/launch-vehicle",
+      "/technology/spaceport",
+      "/technology/space-capsule",
+    ],
+  ];
+  const endpoint = endpoints[Math.floor(Math.random() * endpoints.length)];
+  return endpoint[Math.floor(Math.random() * endpoint.length)];
 }
 
 export default Home;
