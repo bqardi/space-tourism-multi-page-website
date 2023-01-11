@@ -2,7 +2,7 @@
 @use "../styles/typography";
 
 .Destination {
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 1.5rem;
   text-align: center;
   &__subheading {
     text-transform: uppercase;
@@ -20,7 +20,19 @@
     margin: 0 auto;
     margin-bottom: 1.625rem;
   }
-  &__link {
+  &__nav {
+    margin-bottom: 1rem;
+  }
+  &__heading {
+    color: colors.$white;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-family: typography.$bellefair;
+  }
+  &__description {
+    margin-bottom: 1rem;
+  }
+  &Link {
     color: colors.$white;
     font-size: 0.875rem;
     letter-spacing: 2.36px;
@@ -38,6 +50,22 @@
     }
     &:focus-visible {
       background-color: transparentize(colors.$white, 0.9);
+    }
+  }
+  &Info {
+    margin-bottom: 2rem;
+    &__heading {
+      font-size: 0.875rem;
+      letter-spacing: 2.36px;
+    }
+    &__value {
+      color: colors.$white;
+      font-size: 1.75rem;
+      font-family: typography.$bellefair;
+    }
+    &__heading,
+    &__value {
+      text-transform: uppercase;
     }
   }
 }

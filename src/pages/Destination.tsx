@@ -9,6 +9,7 @@ import backgroundDestinationTablet from "../assets/destination/background-destin
 import backgroundDestinationDesktop from "../assets/destination/background-destination-desktop.jpg";
 
 import "./Destination.scss";
+import Divider from "../components/Divider";
 
 type DestinationsImages = {
   png: string;
@@ -35,10 +36,12 @@ function Destination() {
     <>
       <Header />
       <div className="Destination">
-        <p className="Destination__subheading">
-          <span className="Destination__index">01</span>
+        <h1 className="Destination__subheading">
+          <span className="Destination__index" aria-hidden="true">
+            01
+          </span>
           Pick your destination
-        </p>
+        </h1>
         {current && (
           <img
             className="Destination__image"
@@ -51,6 +54,18 @@ function Destination() {
             <DestinationLink key={card.slug} data={card} />
           ))}
         </nav>
+        {current && (
+          <>
+            <h2 className="Destination__heading">{current.name}</h2>
+            <p className="Destination__description">{current.description}</p>
+            <Divider />
+            <DestinationInfo heading="Avg. distance" value={current.distance} />
+            <DestinationInfo
+              heading="Est. travel time"
+              value={current.travel}
+            />
+          </>
+        )}
         <Picture>
           <Picture.Responsive
             mobile={backgroundDestinationMobile}
@@ -75,10 +90,23 @@ function DestinationLink({ data }: DestinationCardLink) {
   );
 }
 
+type DestinationCardInfo = {
+  heading: string;
+  value: string;
+};
+function DestinationInfo({ heading, value }: DestinationCardInfo) {
+  return (
+    <div className="DestinationInfo">
+      <h3 className="DestinationInfo__heading">{heading}</h3>
+      <p className="DestinationInfo__value">{value}</p>
+    </div>
+  );
+}
+
 function linkHandler({ isActive }: { isActive: boolean }) {
   return isActive
-    ? "Destination__link Destination__link--active"
-    : "Destination__link";
+    ? "DestinationLink DestinationLink--active"
+    : "DestinationLink";
 }
 
 export default Destination;
