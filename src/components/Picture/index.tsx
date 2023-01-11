@@ -3,6 +3,7 @@ import "./style.scss";
 
 type PictureProps = {
   children: React.ReactNode;
+  isBackground?: boolean;
 };
 type ResponsiveProps = {
   mobile: string;
@@ -11,8 +12,12 @@ type ResponsiveProps = {
   alt: string;
 };
 
-function Picture({ children }: PictureProps) {
-  return <picture className="Picture">{children}</picture>;
+function Picture({ children, isBackground }: PictureProps) {
+  return (
+    <picture className={`Picture${isBackground && " Picture--isBackground"}`}>
+      {children}
+    </picture>
+  );
 }
 
 function Responsive({ mobile, tablet, desktop, alt }: ResponsiveProps) {

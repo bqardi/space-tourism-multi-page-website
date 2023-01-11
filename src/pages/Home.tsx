@@ -22,7 +22,7 @@ function Home() {
         </div>
         <HomeExplore />
       </div>
-      <Picture>
+      <Picture isBackground>
         <Picture.Responsive
           mobile={backgroundHomeMobile}
           tablet={backgroundHomeTablet}

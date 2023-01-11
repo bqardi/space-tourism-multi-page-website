@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import DataContext from "../contexts/data";
 import Picture from "../components/Picture";
 
@@ -7,6 +7,7 @@ import backgroundTechnologyTablet from "../assets/technology/background-technolo
 import backgroundTechnologyDesktop from "../assets/technology/background-technology-desktop.jpg";
 
 import "./Technology.scss";
+import { useNavigate, useParams } from "react-router-dom";
 
 type TechnologyImages = {
   landscape: string;
@@ -14,6 +15,7 @@ type TechnologyImages = {
 };
 
 export type TechnologyData = {
+  slug: string;
   description: string;
   distance: string;
   images: TechnologyImages;
@@ -21,14 +23,25 @@ export type TechnologyData = {
   travel: string;
 };
 
+const folder = "technology";
+
 function Technology() {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const data = useContext(DataContext);
+  const current = data?.[folder].find(
+    (member) => member.slug === `/${folder}/${slug}`
+  );
+
+  useEffect(() => {
+    if (!data) return;
+    slug ?? navigate(data[folder][0].slug);
+  }, [slug, data]);
+
   return (
     <div className="Technology">
-      {data?.technology.map((card: TechnologyData) => (
-        <DestinationCard key={card.name} data={card} />
-      ))}
-      <Picture>
+      {current && <DestinationCard key={current.name} data={current} />}
+      <Picture isBackground>
         <Picture.Responsive
           mobile={backgroundTechnologyMobile}
           tablet={backgroundTechnologyTablet}

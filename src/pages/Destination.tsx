@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Picture from "../components/Picture";
 import DataContext from "../contexts/data";
 
@@ -15,7 +15,7 @@ type DestinationsImages = {
   webp: string;
 };
 
-export type DestinationsData = {
+export type DestinationData = {
   slug: string;
   description: string;
   distance: string;
@@ -24,12 +24,20 @@ export type DestinationsData = {
   travel: string;
 };
 
+const folder = "destination";
+
 function Destination() {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const data = useContext(DataContext);
-  const current = data?.destinations.find(
-    (destination) => destination.slug === "/destination/" + slug
+  const current = data?.[folder].find(
+    (member) => member.slug === `/${folder}/${slug}`
   );
+
+  useEffect(() => {
+    if (!data) return;
+    slug ?? navigate(data[folder][0].slug);
+  }, [slug, data]);
 
   return (
     <div className="Destination">
@@ -47,7 +55,7 @@ function Destination() {
         />
       )}
       <nav className="Destination__nav" aria-label="Destination menu">
-        {data?.destinations.map((card: DestinationsData) => (
+        {data?.destination.map((card: DestinationData) => (
           <DestinationLink key={card.slug} data={card} />
         ))}
       </nav>
@@ -60,7 +68,7 @@ function Destination() {
           <DestinationInfo heading="Est. travel time" value={current.travel} />
         </>
       )}
-      <Picture>
+      <Picture isBackground>
         <Picture.Responsive
           mobile={backgroundDestinationMobile}
           tablet={backgroundDestinationTablet}
@@ -73,7 +81,7 @@ function Destination() {
 }
 
 type DestinationCardLink = {
-  data: DestinationsData;
+  data: DestinationData;
 };
 function DestinationLink({ data }: DestinationCardLink) {
   return (

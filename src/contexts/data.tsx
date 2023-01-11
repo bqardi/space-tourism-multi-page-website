@@ -1,11 +1,11 @@
 import { createContext } from "react";
 import { CrewData } from "../pages/Crew";
-import { DestinationsData } from "../pages/Destination";
+import { DestinationData } from "../pages/Destination";
 import { TechnologyData } from "../pages/Technology";
 
 export type DataProps = {
   crew: CrewData[];
-  destinations: DestinationsData[];
+  destination: DestinationData[];
   technology: TechnologyData[];
 };
 
