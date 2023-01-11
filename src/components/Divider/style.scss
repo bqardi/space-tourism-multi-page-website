@@ -1,3 +1,4 @@
+@use "../../styles/media";
 @use "../../styles/colors";
 
 .Divider {
@@ -5,4 +6,10 @@
   height: 1px;
   background-color: colors.$themeMediumDark;
   margin-block: 2rem;
+  @media screen and (min-width: media.$medium) {
+    margin-top: 3rem;
+  }
+  @media screen and (min-width: media.$large) {
+    margin-top: 4rem;
+  }
 }

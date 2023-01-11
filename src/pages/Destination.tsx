@@ -41,37 +41,49 @@ function Destination() {
 
   return (
     <div className="Destination">
-      <h1 className="Destination__subheading">
-        <span className="Destination__index" aria-hidden="true">
-          01
-        </span>
-        Pick your destination
-      </h1>
-      {current && (
-        <Picture>
-          <Picture.Compatibility
-            src={current.images.png}
-            sources={[
-              { id: 0, srcSet: current.images.webp, type: "image/webp" },
-            ]}
-            alt={current.name}
-          />
-        </Picture>
-      )}
-      <nav className="Destination__nav" aria-label="Destination menu">
-        {data?.destination.map((card: DestinationData) => (
-          <DestinationLink key={card.slug} data={card} />
-        ))}
-      </nav>
-      {current && (
-        <>
-          <h2 className="Destination__heading">{current.name}</h2>
-          <p className="Destination__description">{current.description}</p>
-          <Divider />
-          <DestinationInfo heading="Avg. distance" value={current.distance} />
-          <DestinationInfo heading="Est. travel time" value={current.travel} />
-        </>
-      )}
+      <div>
+        <h1 className="Destination__heading">
+          <span className="Destination__index" aria-hidden="true">
+            01
+          </span>
+          Pick your destination
+        </h1>
+        {current && (
+          <Picture>
+            <Picture.Compatibility
+              src={current.images.png}
+              sources={[
+                { id: 0, srcSet: current.images.webp, type: "image/webp" },
+              ]}
+              alt={current.name}
+            />
+          </Picture>
+        )}
+      </div>
+      <div className="Destination__body">
+        <nav className="Destination__nav" aria-label="Destination menu">
+          {data?.destination.map((card: DestinationData) => (
+            <DestinationLink key={card.slug} data={card} />
+          ))}
+        </nav>
+        {current && (
+          <>
+            <h2 className="Destination__subheading">{current.name}</h2>
+            <p className="Destination__description">{current.description}</p>
+            <Divider />
+            <div className="Destination__flex">
+              <DestinationInfo
+                heading="Avg. distance"
+                value={current.distance}
+              />
+              <DestinationInfo
+                heading="Est. travel time"
+                value={current.travel}
+              />
+            </div>
+          </>
+        )}
+      </div>
       <Picture isBackground>
         <Picture.Responsive
           mobile={backgroundDestinationMobile}

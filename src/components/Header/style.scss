@@ -18,9 +18,10 @@
     @include mixins.hoverFocus;
   }
   @media screen and (min-width: media.$medium) {
-    padding: 2rem 0 2rem 2rem;
+    padding: 0 0 2rem 2rem;
   }
   @media screen and (min-width: (media.$large + 2rem)) {
+    padding: 2rem 0 2rem 2rem;
     &::before {
       content: "";
       position: relative;

@@ -1,3 +1,5 @@
+@use "../../styles/media";
+
 .Picture {
   &--isBackground {
     position: absolute;
@@ -15,6 +17,13 @@
       max-width: 170px;
       margin: 0 auto;
       margin-bottom: 1.625rem;
+      @media screen and (min-width: media.$medium) {
+        max-width: 300px;
+      }
+      @media screen and (min-width: media.$larger) {
+        max-width: 445px;
+        margin-left: clamp(0rem, 10vw, 3rem);
+      }
     }
   }
 }

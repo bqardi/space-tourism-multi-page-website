@@ -1,15 +1,36 @@
+@use "../styles/media";
 @use "../styles/colors";
 @use "../styles/typography";
 
 .Destination {
   padding: 0 1.5rem 1.5rem;
   text-align: center;
-  &__subheading {
+  @media screen and (min-width: (media.$larger)) {
+    display: flex;
+    justify-content: center;
+    gap: min(10vw, 9.875rem);
+    padding-top: 2.75rem;
+    &__body {
+      margin-top: 7rem;
+      text-align: left;
+    }
+  }
+  &__heading {
     text-transform: uppercase;
     font-size: 1rem;
     color: colors.$white;
     letter-spacing: 2.7px;
     margin-bottom: 2rem;
+    max-width: 28rem;
+    margin-inline: auto;
+    @media screen and (min-width: media.$medium) {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    @media screen and (min-width: media.$larger) {
+      margin-bottom: 5rem;
+      font-size: 1.75rem;
+    }
   }
   &__index {
     color: transparentize(colors.$white, 0.75);
@@ -17,15 +38,40 @@
   }
   &__nav {
     margin-bottom: 1rem;
+    @media screen and (min-width: media.$medium) {
+      margin-bottom: 2rem;
+    }
+    @media screen and (min-width: media.$larger) {
+      margin-left: -1rem;
+    }
   }
-  &__heading {
+  &__subheading {
     color: colors.$white;
     font-size: 3.5rem;
     text-transform: uppercase;
     font-family: typography.$bellefair;
+    @media screen and (min-width: media.$larger) {
+      font-size: 6.25rem;
+    }
   }
   &__description {
-    margin-bottom: 1rem;
+    max-width: 28rem;
+    margin-inline: auto;
+    font-size: 1rem;
+    @media screen and (min-width: media.$larger) {
+      font-size: 1.125rem;
+      line-height: 1.9;
+    }
+  }
+  &__flex {
+    @media screen and (min-width: media.$medium) {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+    }
+    @media screen and (min-width: media.$larger) {
+      justify-content: flex-start;
+    }
   }
   &Link {
     color: colors.$white;
@@ -45,6 +91,12 @@
     }
     &:focus-visible {
       background-color: transparentize(colors.$white, 0.9);
+    }
+    @media screen and (min-width: media.$medium) {
+      font-size: 1rem;
+      letter-spacing: 2.7px;
+      text-underline-offset: 1rem;
+      padding: 1rem;
     }
   }
   &Info {
