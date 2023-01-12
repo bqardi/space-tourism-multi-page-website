@@ -38,7 +38,7 @@ function Crew() {
   }, [slug, data, navigate]);
 
   return (
-    <div className="Crew">
+    <main className="Crew">
       {current && <CrewCard key={current.name} data={current} />}
       <Picture isBackground>
         <Picture.Responsive
@@ -48,7 +48,7 @@ function Crew() {
           alt=""
         />
       </Picture>
-    </div>
+    </main>
   );
 }
 

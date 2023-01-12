@@ -9,7 +9,7 @@ import "./Home.scss";
 
 function Home() {
   return (
-    <div className="Home">
+    <main className="Home">
       <div className="Home__body">
         <div className="Home__content">
           <HomeTitle />
@@ -30,7 +30,7 @@ function Home() {
           alt=""
         />
       </Picture>
-    </div>
+    </main>
   );
 }
 

@@ -40,7 +40,7 @@ function Destination() {
   }, [slug, data, navigate]);
 
   return (
-    <div className="Destination">
+    <main className="Destination">
       <div>
         <h1 className="Destination__heading">
           <span className="Destination__index" aria-hidden="true">
@@ -92,7 +92,7 @@ function Destination() {
           alt=""
         />
       </Picture>
-    </div>
+    </main>
   );
 }
 

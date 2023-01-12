@@ -39,7 +39,7 @@ function Technology() {
   }, [slug, data, navigate]);
 
   return (
-    <div className="Technology">
+    <main className="Technology">
       {current && <DestinationCard key={current.name} data={current} />}
       <Picture isBackground>
         <Picture.Responsive
@@ -49,7 +49,7 @@ function Technology() {
           alt=""
         />
       </Picture>
-    </div>
+    </main>
   );
 }
 
