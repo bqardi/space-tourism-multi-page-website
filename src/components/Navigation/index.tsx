@@ -51,6 +51,7 @@ function Navigation() {
         }}
         aria-expanded={open}
         aria-controls="navigation-list"
+        aria-label="Toggle menu"
       >
         {open ? <IconClose /> : <IconHamburger />}
       </button>
