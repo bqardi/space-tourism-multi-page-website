@@ -4,26 +4,36 @@
 
 .Home {
   &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1.5rem;
     text-align: center;
-    @media screen and (min-width: media.$large) {
-      padding: 1.5rem min(8vw, 10rem);
-      display: flex;
+    @media screen and (min-width: media.$larger) {
+      padding: 1.5rem 10rem;
+      flex-direction: row;
       justify-content: space-between;
-      margin: 5rem auto 0;
+      margin: 6.5rem auto 0;
       text-align: left;
-      max-width: 1200px;
+      max-width: 1440px;
     }
   }
   &__content {
+    flex: 1 0 100%;
     max-width: 450px;
-    margin: 0 auto;
     @media screen and (min-width: media.$large) {
       margin: 0;
     }
   }
   &__text {
-    letter-spacing: 1px;
+    @media screen and (min-width: media.$tablet) {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    @media screen and (min-width: media.$desktop) {
+      font-size: 1.125rem;
+      line-height: 1.78;
+    }
   }
   &Title {
     text-transform: uppercase;
@@ -41,6 +51,12 @@
         font-size: 8.375rem;
       }
     }
+    @media screen and (min-width: media.$larger) {
+      font-size: 1.75rem;
+      &__large {
+        font-size: 9.375rem;
+      }
+    }
   }
   &Explore {
     display: grid;
@@ -50,7 +66,7 @@
     height: $buttonDimensions;
     text-decoration: none;
     padding: 0;
-    margin: 4rem auto 0;
+    margin-top: 4rem;
     color: colors.$themeDark;
     background-color: colors.$white;
     border: none;

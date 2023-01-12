@@ -37,7 +37,7 @@ function Home() {
 function HomeTitle() {
   return (
     <h1 className="HomeTitle">
-      So, you want to travel to space
+      So, you want to travel to
       <span className="HomeTitle__large">Space</span>
     </h1>
   );
