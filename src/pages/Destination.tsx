@@ -37,7 +37,7 @@ function Destination() {
   useEffect(() => {
     if (!data) return;
     slug ?? navigate(data[folder][0].slug);
-  }, [slug, data]);
+  }, [slug, data, navigate]);
 
   return (
     <div className="Destination">
